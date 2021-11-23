@@ -1,27 +1,25 @@
-import logo from './logo.svg'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Suspense, lazy } from 'react'
+
 import './App.css'
+
+const Register = lazy(() => import('./Views/Register'))
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <h1>sxsx sxkw skx wsk xkw xkwsx k </h1>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Suspense fallback={<span>Loading...</span>}>
+        <Router>
+          <div>
+            <Switch>
+              <Route path="/register">
+                <Register></Register>
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </Suspense>
+    </>
   )
 }
 
