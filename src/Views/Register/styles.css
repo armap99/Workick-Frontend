@@ -1,0 +1,19 @@
+.general-register-container{
+    width: 100%;
+    height: 100%;
+    column-count: 2;
+    align-items: center;
+    display: flex;
+    column-gap: 2em; /* separacion entre columnas */
+    /*margin: 3em;*/
+
+}
+
+.image-container-register{
+    width: 40em;
+    height: 30em;
+    margin-left: 4.5em;
+}
+
+
+/* #1ab394 */ 
