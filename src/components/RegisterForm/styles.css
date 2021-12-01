@@ -1,8 +1,78 @@
 .form-container-register{
     margin-top: 1em;
-    border: 0.1em solid black;
+    border: 0.1em solid #e7eaec;
     height: 35em;
     width: 30em;
     border-radius: 1em;
+    background-color: ghostwhite;
+}
 
+.sub-container-form-register{
+    align-items: center;
+    align-content: center;
+    width: 30em;
+    height: 21em;
+    text-align: center;
+}
+
+.text-register-title{
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1em;
+    text-align: center;
+    font-weight: lighter;
+    
+}
+
+.input-register-for{
+    border: 0.1em solid #e7eaec;
+    margin: 0.5em;
+    height: 2em;
+    width: 25em;
+    font-size: medium;
+    padding-left: 0.5em;
+}
+
+.municipio-text-register-form{
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    margin-left: 2.7em;
+    font-size: 0.9em;
+}
+
+.button-register-form{
+    background-color: #1ab394;
+    width: 25em;
+    height: 2em;
+    color: white;
+    border-radius: 0.3em;
+    font-size: 1em;
+    margin-top: 1em;
+    border: 0;
+    cursor: pointer;
+}
+
+.footer-registerform-text{
+    color: #333;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.footer-button-login-register{
+    color: #333;
+    font-weight: lighter;
+    text-align: center;
+    background-color: white;
+    width: 30em;
+    height: 2em;
+    align-content: center;
+    border:  0.1em solid #333;
+    margin-left: 3em;
+    cursor: pointer;
+}
+
+.input-register-for:focus{
+    border: 0.1em solid #1ab394;
+    outline: none;
 }

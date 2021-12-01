@@ -4,9 +4,9 @@ import RegisterForm from '../../components/RegisterForm'
 const Register = () => {
   return (
     <div className="general-register-container">
-      <div>
+      <div className="image-container-register">
         <img
-          className="image-container-register"
+          className="image-register"
           src="assets/img/Logos/LogoPrincipalNoFondo.png"
           alt="Workick-logo-register"
         />
