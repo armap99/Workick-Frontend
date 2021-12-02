@@ -12,7 +12,7 @@ const Register = () => {
         />
       </div>
       <div>
-        <RegisterForm></RegisterForm>
+        <RegisterForm />
       </div>
     </div>
   )

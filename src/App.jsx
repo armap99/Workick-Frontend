@@ -5,6 +5,7 @@ import './App.css'
 
 const Principal = lazy(() => import('./Views/Principal'))
 const Register = lazy(() => import('./Views/Register'))
+const Login = lazy(() => import('./Views/Login'))
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
               </Route>
               <Route exact path="/register">
                 <Register></Register>
+              </Route>
+              <Route exact path="/login">
+                <Login></Login>
               </Route>
             </Switch>
           </div>
