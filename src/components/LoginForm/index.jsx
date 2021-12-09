@@ -1,21 +1,64 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import { AppContext } from '../../data/state'
+import { logIn } from '../../services/accountService'
 import './styles.css'
 
 const LoginForm = () => {
+  const { dispatch } = useContext(AppContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const history = useHistory()
 
   const onChangeEmail = (event) => {
-    setEmail(event.target.value)
+    setEmail(event.target.value.trim())
   }
 
   const onChangePassword = (event) => {
-    setPassword(event.target.value)
+    setPassword(event.target.value.trim())
+  }
+
+  const logInFun = async (event) => {
+    event.preventDefault()
+    const data = {
+      email,
+      password,
+    }
+    try {
+      const res = await logIn(data)
+      // console.log(res)
+      const { nombre, token, id, estatus } = res.data
+      dispatch({
+        type: 'set-nombre',
+        nombre,
+      })
+      dispatch({
+        type: 'set-token',
+        token,
+      })
+      dispatch({
+        type: 'set-id',
+        id,
+      })
+      dispatch({
+        type: 'set-status',
+        estatus,
+      })
+      history.push('/')
+    } catch (err) {
+      if (err.response.status === 400) {
+        alert('Datos Invalidos')
+      } else {
+        alert('Algo fallo')
+        setEmail('')
+        setPassword('')
+      }
+    }
   }
 
   return (
     <div className="form-container-login">
-      <form action="">
+      <form action="" onSubmit={logInFun}>
         <div className="title-container-login-form">
           <div className="container-image-icon-login-form">
             <img

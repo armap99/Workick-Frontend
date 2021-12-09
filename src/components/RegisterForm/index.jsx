@@ -25,27 +25,27 @@ const RegisterForm = () => {
 
   const onChangeName = (e) => {
     // console.log(name)
-    setName(e.target.value)
+    setName(e.target.value.trim())
   }
 
   const onChangeEmail = (event) => {
     // console.log(email)
-    setEmail(event.target.value)
+    setEmail(event.target.value.trim())
   }
 
   const onChangeAddress = (e) => {
     // console.log(address)
-    setAddress(e.target.value)
+    setAddress(e.target.value.trim())
   }
 
   const onChangeCity = (e) => {
     // console.log(city)
-    setCity(e.target.value)
+    setCity(e.target.value.trim())
   }
 
   const onChangePassword = (e) => {
     // console.log(password)
-    setPassword(e.target.value)
+    setPassword(e.target.value.trim())
   }
 
   return (

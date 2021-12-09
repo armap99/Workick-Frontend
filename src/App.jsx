@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
+import { createBrowserHistory } from 'history'
+import { AppContextProvider } from './data/state'
 
 import './App.css'
 
@@ -7,11 +9,23 @@ const Principal = lazy(() => import('./Views/Principal'))
 const Register = lazy(() => import('./Views/Register'))
 const Login = lazy(() => import('./Views/Login'))
 
+const hist = createBrowserHistory()
+
 function App() {
   return (
     <>
+      <AppContextProvider>
+        <AppWorkick></AppWorkick>
+      </AppContextProvider>
+    </>
+  )
+}
+
+function AppWorkick() {
+  return (
+    <>
       <Suspense fallback={<span>Loading...</span>}>
-        <Router>
+        <Router history={hist}>
           <div>
             <Switch>
               <Route exact path="/">
