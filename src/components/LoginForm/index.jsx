@@ -1,8 +1,13 @@
 import { useState, useContext } from 'react'
-import { useHistory } from 'react-router-dom'
-import { AppContext } from '../../data/state'
+import { useHistory } from 'react-router-dom' // cambio de vista
+import { AppContext } from '../../data/state' // para variables locales
 import { logIn } from '../../services/accountService'
+import Swal from 'sweetalert2' // para alertas
+import withReactContent from 'sweetalert2-react-content'
+
 import './styles.css'
+
+const MySwal = withReactContent(Swal)
 
 const LoginForm = () => {
   const { dispatch } = useContext(AppContext)
@@ -47,13 +52,26 @@ const LoginForm = () => {
       history.push('/')
     } catch (err) {
       if (err.response.status === 400) {
-        alert('Datos Invalidos')
+        // alert('Datos Invalidos')
+        logInFailAlert()
       } else {
         alert('Algo fallo')
         setEmail('')
         setPassword('')
       }
     }
+  }
+
+  const logInFailAlert = () => {
+    MySwal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Verifique el correo y la contraseña',
+    })
+  }
+
+  const redirectRegister = () => {
+    history.push('/register')
   }
 
   return (
@@ -92,7 +110,9 @@ const LoginForm = () => {
       </form>
       <div className="footer-container-login-form">
         <p className="some-text-footer-login">¿No tienes una cuenta?</p>
-        <button className="footer-button-login-form">Crear una Cuenta</button>
+        <button className="footer-button-login-form" onClick={redirectRegister}>
+          Crear una Cuenta
+        </button>
       </div>
     </div>
   )

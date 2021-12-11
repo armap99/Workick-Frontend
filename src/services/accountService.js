@@ -11,6 +11,7 @@ export const createNewAccount = async (data) => {
     return res
   } catch (err) {
     console.log(err)
+    throw err
   }
 }
 

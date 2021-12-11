@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import { createNewAccount } from '../../services/accountService'
+import { useHistory } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import './styles.css'
+
+const MySwal = withReactContent(Swal)
 
 const RegisterForm = () => {
   const [name, setName] = useState('')
@@ -8,9 +13,14 @@ const RegisterForm = () => {
   const [address, setAddress] = useState('')
   const [city, setCity] = useState('')
   const [password, setPassword] = useState('')
+  const history = useHistory()
 
   const sendDataAccount = async (evento) => {
     evento.preventDefault() // para no recargar pagina
+    setName(name.trim())
+    setEmail(email.trim())
+    setAddress(address.trim())
+    setPassword(password.trim())
     const data = {
       name,
       email,
@@ -18,34 +28,68 @@ const RegisterForm = () => {
       city,
       password,
     }
-    const res = await createNewAccount(data)
-    console.log(res)
-    setAddress('')
+    try {
+      const res = await createNewAccount(data)
+      console.log(res)
+      successAlert()
+    } catch (err) {
+      if (err.response.status === 400) {
+        errorAlert()
+        // alert('Datos invalidos')
+      } else {
+        console.log(err)
+        alert('Algo salio mal')
+      }
+    }
+  }
+
+  const loginRedirect = () => {
+    history.push('/login')
+  }
+
+  const successAlert = () => {
+    MySwal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Su usuario a sido registrado',
+      showConfirmButton: false,
+      timer: 1500,
+    }).then(() => {
+      history.push('/login')
+    })
+  }
+
+  const errorAlert = () => {
+    MySwal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Datos invaalidos!',
+    })
   }
 
   const onChangeName = (e) => {
     // console.log(name)
-    setName(e.target.value.trim())
+    setName(e.target.value)
   }
 
   const onChangeEmail = (event) => {
     // console.log(email)
-    setEmail(event.target.value.trim())
+    setEmail(event.target.value)
   }
 
   const onChangeAddress = (e) => {
     // console.log(address)
-    setAddress(e.target.value.trim())
+    setAddress(e.target.value)
   }
 
   const onChangeCity = (e) => {
     // console.log(city)
-    setCity(e.target.value.trim())
+    setCity(e.target.value)
   }
 
   const onChangePassword = (e) => {
     // console.log(password)
-    setPassword(e.target.value.trim())
+    setPassword(e.target.value)
   }
 
   return (
@@ -96,7 +140,9 @@ const RegisterForm = () => {
         </button>
       </form>
       <p className="footer-registerform-text">¿Ya tienes cuenta?</p>
-      <button className="footer-button-login-register">Inicia Sesión</button>
+      <button onClick={loginRedirect} className="footer-button-login-register">
+        Inicia Sesión
+      </button>
     </div>
   )
 }
