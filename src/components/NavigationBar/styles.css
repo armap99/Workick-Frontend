@@ -1,0 +1,61 @@
+li {display: inline;}
+
+ul {
+    display: flex;
+    align-content: center;
+    align-items: center;
+} 
+
+.navigation-bar-container{
+    background-color: #f3f3f4;
+    width: 100%;
+    height: 3.5em;
+    border: 0.1em solid #f3f3f4;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
+
+.container-li-bienvedios-nav{
+    height: 3em;
+    width: auto;
+    margin-right: 1em;
+    align-items: center;
+    display: flex;
+    margin-right: 2em;
+}
+
+.container-li-login{
+    height: 3em;
+    width: auto;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.container-li-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-icon{ 
+    height: 100%;
+    width: 100%;
+}
+
+.login-container-icon{
+    margin-top: 0.7em;
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+}
+
+.text-nav-bar{
+    color: #999c9e;
+    font-weight: lighter;
+}
+
+.text-login-nav{
+    color: #999c9e;
+    font-weight: bold;
+}
