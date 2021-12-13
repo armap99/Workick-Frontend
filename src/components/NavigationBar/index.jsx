@@ -11,6 +11,12 @@ const NavigationBar = () => {
   const redirectLogin = () => {
     history.push('login')
   }
+
+  /* return (
+    <>
+      {state.nombre ? sndnsndsind : sndisndisnd} 
+    </>
+  ) */
   if (state.nombre) {
     return (
       <nav className="navigation-bar-container">
@@ -18,7 +24,6 @@ const NavigationBar = () => {
           <li className="container-li-bienvedios-nav">
             <p className="text-nav-bar">Bienvenidos a Workick</p>
           </li>
-
           <li className="container-li-login container-li-icon">
             <p className="text-login-nav">{state.nombre} ▼</p>
           </li>
