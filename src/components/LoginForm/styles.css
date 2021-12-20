@@ -39,6 +39,7 @@
     justify-content: center;
     display: flex;
     align-items: center;
+    margin-bottom: 3em;
 }
 
 .input-login-form{
@@ -69,10 +70,12 @@
 
 .buton-container-login{
     margin-left: 0.5em;
+    margin-top: 5.5em;
 }
 
 .footer-container-login-form{
     justify-content: center;
+    margin-top: 1em;
     /* text-align: center; */
 }
 
