@@ -12,8 +12,7 @@ ul {
     height: 3.5em;
     border: 0.1em solid #f3f3f4;
     display: flex;
-    align-items: right;
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .container-li-bienvedios-nav{
