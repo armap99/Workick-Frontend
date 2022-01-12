@@ -13,16 +13,16 @@ const WorkerCell = ({
 }) => {
   return (
     <div className="general-container-workercell">
-      <div>
-        <p>{titulo}</p>
+      <div className="title-workercell-container">
+        <p className="title-workercell">{titulo}</p>
       </div>
-      <div>
-        <p>{nombre}</p>
+      <div className="name-workercell-container">
+        <p className="name-workercell">{nombre}</p>
       </div>
-      <div>
-        <p>{descripcion}</p>
+      <div className="description-workercell-container">
+        <p className="description-workercell">{descripcion}</p>
       </div>
-      <div>
+      <div className="botton-worker-cell">
         <ReactStars
           count={5}
           value={estrellas}
@@ -30,6 +30,7 @@ const WorkerCell = ({
           activeColor={'#ffa500'}
           size={'20px'}
         />
+        <p className="description-workercell separador-workercell"> | </p>
         <ReactStars
           count={5}
           value={coste}
@@ -38,7 +39,12 @@ const WorkerCell = ({
           size={'20px'}
           char={'$'}
         />
-        <p>{trabajos}</p>
+        <p className="description-workercell separador-workercell"> | </p>
+        <p className="trabajos-workercell">Trabajos {trabajos}</p>
+      </div>
+      <hr />
+      <div className="button-workercell-container">
+        <button className="button-workercell">Contactar</button>
       </div>
     </div>
   )
