@@ -1,0 +1,18 @@
+.container-principal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.right-principal-container{
+    width: 83%;
+    background-color: #f3f3f4;
+}
+
+.left-principal-container{
+    width: 17%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+}
