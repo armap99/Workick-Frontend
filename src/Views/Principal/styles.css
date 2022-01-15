@@ -13,5 +13,6 @@
 .left-principal-container{
     width: 17%;
     height: 100vh;
-
+    position: fixed;
+    left: 0;
 }

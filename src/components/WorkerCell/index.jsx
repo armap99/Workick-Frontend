@@ -10,7 +10,11 @@ const WorkerCell = ({
   estrellas,
   coste,
   trabajos,
+  id,
 }) => {
+  const contactarTrabajador = (aux) => {
+    console.log(id)
+  }
   return (
     <div className="general-container-workercell">
       <div className="title-workercell-container">
@@ -28,7 +32,7 @@ const WorkerCell = ({
           value={estrellas}
           edit={false}
           activeColor={'#ffa500'}
-          size={'20px'}
+          size={15}
         />
         <p className="description-workercell separador-workercell"> | </p>
         <ReactStars
@@ -36,7 +40,7 @@ const WorkerCell = ({
           value={coste}
           edit={false}
           activeColor={'#1e8e3e'}
-          size={'20px'}
+          size={15}
           char={'$'}
         />
         <p className="description-workercell separador-workercell"> | </p>
@@ -44,7 +48,12 @@ const WorkerCell = ({
       </div>
       <hr />
       <div className="button-workercell-container">
-        <button className="button-workercell">Contactar</button>
+        <button
+          className="button-workercell"
+          onClick={() => contactarTrabajador(id)}
+        >
+          Contactar
+        </button>
       </div>
     </div>
   )
@@ -57,6 +66,7 @@ WorkerCell.propTypes = {
   estrellas: PropTypes.number.isRequired,
   coste: PropTypes.number.isRequired,
   trabajos: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
 }
 
 export default WorkerCell

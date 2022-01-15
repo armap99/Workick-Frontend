@@ -3,7 +3,9 @@
   width: 95%;
   height: 15em;
   margin-left: 2.5%;
-  box-shadow: 0px 0px 3px 0px #000000;
+  box-shadow: 0px 0px 3px 0px #ccc;
+  margin-bottom: 2em;
+  border-radius: 15px;
 }
 
 .title-workercell {
@@ -45,7 +47,7 @@
     margin-left: 1%;
     width: 99%;
     height: 7em;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .botton-worker-cell{
