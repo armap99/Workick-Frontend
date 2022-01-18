@@ -1,0 +1,24 @@
+.worker-profile-general-container{
+    background-color: red;
+    width: 47%;
+    margin-right: 2em;
+    margin-left: 1em;
+    box-shadow: 0px 0px 3px 0px #ccc;
+    height: 35em;
+}
+
+.worker-profile-img {
+    height: 100%;
+    width: 100%;
+}
+
+.worker-profile-img-container{
+    background-color: #3c4046;
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

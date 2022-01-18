@@ -6,6 +6,7 @@ import { AppContextProvider } from './data/state'
 import './App.css'
 
 import DefaultPage from './Views/DefaultPage'
+import WorkerProfile from './Views/WorkerProfile'
 
 const Principal = lazy(() => import('./Views/Principal'))
 const Register = lazy(() => import('./Views/Register'))
@@ -43,8 +44,12 @@ function AppWorkick() {
               <Route exact path="/login">
                 <Login></Login>
               </Route>
-              <Route exact path="/servicios">
-                <Principal></Principal>
+              <Route exact path="/perfilTrabajador">
+                <>
+                  <Principal>
+                    <WorkerProfile></WorkerProfile>
+                  </Principal>
+                </>
               </Route>
             </Switch>
           </div>

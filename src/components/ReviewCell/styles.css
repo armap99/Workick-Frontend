@@ -1,0 +1,43 @@
+.review-general-container {
+  background-color: white;
+  height: 10em;
+  width: 47%;
+  box-shadow: 0px 0px 3px 0px #ccc;
+}
+
+.reviewcell-nametitle-container {
+  margin-bottom: 0.5em;
+  margin-left: 0.5em;
+}
+
+.reviewcell-nametitle {
+  color: #676a6c;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.reviewcell-textreview {
+  color: #676a6c;
+  font-size: 12px;
+  text-align: justify;
+  margin-left: 0.5em;
+}
+
+.reviewcell-container-review {
+  border: 1px solid #e7eaec;
+  line-height: 1em;
+  width: 90%;
+  height: 6em;
+  margin-left: 5%;
+  overflow-y: auto;
+}
+
+.reviewcell-botton-container {
+  display: flex;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+}
+
+.reviewcell-stars {
+  margin-right: 0.5em;
+}
