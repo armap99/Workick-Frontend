@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types'
 import ReactStars from 'react-rating-stars-component'
+import { useContext } from 'react'
+import { AppContext } from '../../data/state' // para variables locales
+import { useHistory } from 'react-router-dom' // cambio de vista
 
 import './styles.css'
 
@@ -12,12 +15,27 @@ const WorkerCell = ({
   trabajos,
   id,
 }) => {
+  const history = useHistory()
+  const { dispatch } = useContext(AppContext)
+
   const contactarTrabajador = (aux) => {
-    console.log(id)
+    dispatch({
+      type: 'set-idTrabajador',
+      idTrabajador: aux,
+    })
   }
+
+  const verPerfilTrabajador = () => {
+    dispatch({
+      type: 'set-idTrabajador',
+      idTrabajador: id,
+    })
+    history.push('/perfilTrabajador')
+  }
+
   return (
     <div className="general-container-workercell">
-      <div className="title-workercell-container">
+      <div className="title-workercell-container" onClick={verPerfilTrabajador}>
         <p className="title-workercell">{titulo}</p>
       </div>
       <div className="name-workercell-container">

@@ -15,6 +15,18 @@ export const getAllWorkersInfo = async () => {
   }
 }
 
+export const getWorkerById = async (data) => {
+  try {
+    const res = await axiosDefault.get(
+      `http://localhost:5000/trabajador/${data.id}`
+    )
+    return res.data.data
+  } catch (err) {
+    console.log(err)
+    throw err
+  }
+}
+
 /* export const getAllWorkersInfo = async (data) => {
   try {
     const headers = { 

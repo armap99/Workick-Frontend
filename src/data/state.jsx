@@ -8,6 +8,7 @@ const initialState = {
   nombre: undefined,
   id: undefined,
   estatus: undefined,
+  idTrabajador: undefined,
 }
 
 const reducer = (state, action) => {
@@ -29,6 +30,8 @@ const reducer = (state, action) => {
       }
     case 'set-token':
       return { ...state, token: action.token }
+    case 'set-idTrabajador':
+      return { ...state, idTrabajador: action.idTrabajador }
     default:
       return state
   }
@@ -39,7 +42,7 @@ function AppContextProvider(propsp) {
     ...initialState,
   }
 
-  const [data, setData] = useLocalStorage('armando', fullInitialState)
+  const [data, setData] = useLocalStorage('workick', fullInitialState) // workick es el nombre el state
   const [state, dispatch] = useReducer(reducer, data)
   const value = { state, dispatch }
 
