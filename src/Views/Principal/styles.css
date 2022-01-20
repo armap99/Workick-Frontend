@@ -8,6 +8,7 @@
 .right-principal-container{
     width: 83%;
     background-color: #f3f3f4;
+    background-attachment: fixed;
 }
 
 .left-principal-container{

@@ -1,8 +1,9 @@
 .review-general-container {
   background-color: white;
   height: 10em;
-  width: 47%;
+  width: 95%;
   box-shadow: 0px 0px 3px 0px #ccc;
+  margin-left: 5%;
 }
 
 .reviewcell-nametitle-container {

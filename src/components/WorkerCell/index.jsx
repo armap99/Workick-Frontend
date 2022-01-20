@@ -26,6 +26,7 @@ const WorkerCell = ({
   }
 
   const verPerfilTrabajador = () => {
+    console.log(id)
     dispatch({
       type: 'set-idTrabajador',
       idTrabajador: id,
