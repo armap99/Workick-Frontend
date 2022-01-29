@@ -1,0 +1,34 @@
+.filter-defaultpage-container {
+  background-color: white;
+  border: 1px solid #e7eaec;
+  width: 100%;
+  height: 6em;
+  margin-bottom: 2em;
+}
+
+.filter-defaultpage-container-text {
+  font-weight: lighter;
+  color: #676a6c;
+  font-size: 1.7em;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+.filter-defaultpage-form-container {
+  margin-left: 1.5em;
+}
+
+.filter-defaultpage-form-input {
+  border: none;
+  font-size: 1em;
+}
+
+.filter-defaultpage-form-input:focus {
+  outline: none;
+  color: #1ab394;
+}
+
+.filter-line-defaulpage {
+  color: #676a6c;
+}
+

@@ -15,6 +15,19 @@ export const getAllWorkersInfo = async () => {
   }
 }
 
+export const getAllWorkersInfoFilter = async (data) => {
+  try {
+    const res = await axiosDefault.post(
+      'http://localhost:5000/trabajador/filtro/',
+      data
+    )
+    return res.data.data
+  } catch (err) {
+    console.log(err)
+    throw err
+  }
+}
+
 export const getWorkerById = async (data) => {
   try {
     const res = await axiosDefault.get(
