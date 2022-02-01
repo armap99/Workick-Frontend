@@ -25,65 +25,72 @@
   height: 2em;
 }
 
-.name-workercell{
-    font-weight: bold;
-    font-size: 12px;
-    color: #675a6c;
+.name-workercell {
+  font-weight: bold;
+  font-size: 12px;
+  color: #675a6c;
 }
 
-.name-workercell-container{
-    margin-left: 1%;
-    width: 99%;
-    height: 0.8em;
+.name-workercell-container {
+  margin-left: 1%;
+  width: 99%;
+  height: 0.8em;
 }
 
-.description-workercell{
-    font-weight: 400;
-    font-size: 12px;
-    color: #675a6c;
+.description-workercell {
+  font-weight: 400;
+  font-size: 12px;
+  color: #675a6c;
 }
 
-.description-workercell-container{
-    margin-left: 1%;
-    width: 99%;
-    height: 7em;
-    overflow-y: auto;
+.description-workercell-container {
+  margin-left: 1%;
+  width: 99%;
+  height: 7em;
+  overflow-y: auto;
 }
 
-.botton-worker-cell{
+.botton-worker-cell {
+  display: flex;
+  margin-left: 1%;
+  width: 99%;
+  height: 2em;
+}
+
+.trabajos-workercell {
+  font-weight: bold;
+  font-size: 14px;
+  color: #675a6c;
+}
+
+.separador-workercell {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.button-workercell {
+  background-color: #1ab394;
+  width: 6em;
+  height: 2em;
+  color: white;
+  border-radius: 0.3em;
+  font-size: 1em;
+  margin-top: 1em;
+  border: 0;
+  cursor: pointer;
+}
+
+.button-workercell-container {
+  margin-left: 1%;
+  width: 99%;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+}
+
+.swal-worker-cell {
     display: flex;
-    margin-left: 1%;
-    width: 99%;
-    height: 2em;
-}
-
-.trabajos-workercell{
-    font-weight: bold;
-    font-size: 14px;
-    color: #675a6c;
-}
-
-.separador-workercell{
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-.button-workercell{
-    background-color: #1ab394;
-    width: 6em;
-    height: 2em;
-    color: white;
-    border-radius: 0.3em;
-    font-size: 1em;
-    margin-top: 1em;
-    border: 0;
-    cursor: pointer;    
-}
-
-.button-workercell-container{
-    margin-left: 1%;
-    width: 99%;
-    height: 2.5em;
-    display: flex;
-    align-items: center;
+    text-align: left;
+    align-content: left;
+    align-items: flex-start;
 }

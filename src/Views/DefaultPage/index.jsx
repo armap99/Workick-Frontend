@@ -53,15 +53,16 @@ const DefaultPage = () => {
       </div>
       <div>
         {workers.map((worker) => (
-          <div key={worker.trabajador.Id}>
+          <div key={worker.trabajador?.Id ?? 0}>
             <WorkerCell
-              titulo={worker.trabajador.TituloTrabajo}
-              nombre={worker.Nombre}
-              descripcion={worker.trabajador.DescripcionCorta}
-              estrellas={worker.trabajador.CalificacionGlobal}
-              coste={worker.trabajador.CalificacionPrecio}
-              trabajos={worker.trabajador.Trabajos}
-              id={worker.trabajador.Id}
+              titulo={worker.trabajador?.TituloTrabajo ?? ''}
+              nombre={worker.Nombre ?? ''}
+              descripcion={worker.trabajador?.DescripcionCorta ?? ''}
+              estrellas={worker.trabajador?.CalificacionGlobal ?? 0}
+              coste={worker.trabajador?.CalificacionPrecio ?? 0}
+              trabajos={worker.trabajador?.Trabajos ?? 0}
+              id={worker.trabajador?.Id ?? 0}
+              categoria={worker.trajador?.Categoria ?? 0}
             />
           </div>
         ))}
