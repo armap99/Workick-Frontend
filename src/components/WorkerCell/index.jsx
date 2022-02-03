@@ -72,7 +72,30 @@ const WorkerCell = ({
       console.log(res)
     } catch (err) {
       console.log(err)
+      if (err.message === 'Request failed with status code 401') {
+        throwUnAuthorizedMessage()
+      }
     }
+  }
+
+  const throwUnAuthorizedMessage = () => {
+    let timerInterval
+    MySwal.fire({
+      title: 'Sesión inválida!',
+      html: 'Por favor reingrese sus credenciales.',
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading()
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      },
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        history.push('/login')
+      }
+    })
   }
 
   const verPerfilTrabajador = () => {
